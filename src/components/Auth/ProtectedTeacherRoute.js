@@ -5,6 +5,7 @@ import { ShowLoading, HideLoading } from "../../redux/alerts.js";
 import { SetTeacher } from "../../redux/teachers.js";
 import { useNavigate } from "react-router-dom";
 import DefaultLayout from "./DefaultLayout";
+
 function ProtectedTeacherRoute(props) {
   const navigate = useNavigate();
   const [readyToRednder, setReadyToRednder] = React.useState(false);
@@ -12,10 +13,10 @@ function ProtectedTeacherRoute(props) {
 
   const geEmployeeData = async () => {
     try {
-      dispatch(ShowLoading());
+      dispatch(ShowLoading()); // Show spinner before starting the request
       const token = localStorage.getItem("token");
-      dispatch(HideLoading());
-      const resposne = await axios.post(
+
+      const response = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/api/teacher/get-teacher-by-id`,
         {},
         {
@@ -24,14 +25,22 @@ function ProtectedTeacherRoute(props) {
           },
         }
       );
-      if (resposne.data.success) {
-        dispatch(SetTeacher(resposne.data.data));
+
+      if (response.data.success) {
+        dispatch(SetTeacher(response.data.data));
         setReadyToRednder(true);
+      } else {
+        // Handle API error where success is false
+        localStorage.removeItem("token");
+        navigate("/auth/teacher/login");
       }
     } catch (error) {
+      // Handle network or other errors
       localStorage.removeItem("token");
-      dispatch(HideLoading());
       navigate("/auth/teacher/login");
+    } finally {
+      // This will always run, after the try or catch is finished
+      dispatch(HideLoading());
     }
   };
 

@@ -41,7 +41,7 @@ export default function DefaultLayout(props) {
       <div className="py-5 flex items-center justify-between p-3 bg-gray-800">
         <Link to="/">
           <div className="flex items-center text-white">
-            <p>EduWave</p>
+            <p>eduBuddy</p>
           </div>
         </Link>
         <div className="flex gap-8 text-white">

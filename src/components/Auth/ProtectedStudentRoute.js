@@ -10,6 +10,8 @@ function ProtectedStudentRoute(props) {
   const navigate = useNavigate();
   const [readyToRednder, setReadyToRednder] = React.useState(false);
   const dispatch = useDispatch();
+  
+  // This function is not used in the provided logic, but keeping it in case it's needed elsewhere.
   const enableFullScreen = () => {
     const element = document.documentElement;
     if (element.requestFullscreen) {
@@ -22,12 +24,13 @@ function ProtectedStudentRoute(props) {
       element.msRequestFullscreen();
     }
   };
+
   const geEmployeeData = async () => {
     try {
-      dispatch(ShowLoading());
+      dispatch(ShowLoading()); // Show spinner before starting the request
       const token = localStorage.getItem("token");
-      dispatch(HideLoading());
-      const resposne = await axios.post(
+      
+      const response = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/api/student/get-student-by-id`,
         {},
         {
@@ -36,20 +39,27 @@ function ProtectedStudentRoute(props) {
           },
         }
       );
-      if (resposne.data.success) {
-        dispatch(SetStudent(resposne.data.data));
+
+      if (response.data.success) {
+        dispatch(SetStudent(response.data.data));
         setReadyToRednder(true);
+      } else {
+        // Handle API error where success is false
+        localStorage.removeItem("token");
+        navigate("/auth/student/login");
       }
     } catch (error) {
+      // Handle network or other errors
       localStorage.removeItem("token");
-      dispatch(HideLoading());
       navigate("/auth/student/login");
+    } finally {
+      // This will always run, after the try or catch is finished
+      dispatch(HideLoading());
     }
   };
 
   useEffect(() => {
     geEmployeeData();
-    // enableFullScreen();
   }, []);
 
   return readyToRednder && <DefaultLayout>{props.children}</DefaultLayout>;

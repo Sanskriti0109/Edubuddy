@@ -14,10 +14,10 @@ export default function StudentDashboard() {
   const getQuote = async () => {
     try {
       const response = await axios.get(
-        "https://api.api-ninjas.com/v1/quotes?category=success",
+        "https://api.api-ninjas.com/v1/quotes",
         {
           headers: {
-            "X-Api-Key": `R509+72S2aqIVQc6ITpB/A==GwRl6NVj8PGHSkCr`,
+            "X-Api-Key": `q5ahUIsfOGEgC+iYtHD5jQ==gkhOm3bfLomvS54w`,
           },
         }
       );

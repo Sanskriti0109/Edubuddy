@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className="py-5 flex items-center justify-between p-3 bg-gray-800">
         <Link to="/">
           <div className="flex items-center text-white">
-            <p>EduWave</p>
+            <p>eduBuddy</p>
           </div>
         </Link>
 

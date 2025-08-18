@@ -125,7 +125,7 @@ function HomePage() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-center md:justify-between">
           <Link to="/">
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold">eduWave</span>
+              <span className="text-2xl font-bold">eduBuddy</span>
             </div>
           </Link>
           <div className="hidden md:flex items-center gap-3">
@@ -138,7 +138,7 @@ function HomePage() {
             <button className="bg-transparent">
               <a
                 target="_blank"
-                href="https://github.com/suraj719/eduWave"
+                href="https://github.com/Sanskriti0109"
                 className="border border-gray-700 hover:bg-gray-700 text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
               >
                 <svg
@@ -161,13 +161,11 @@ function HomePage() {
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-1">
           <div className="space-y-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-300">
-              Revolutionize <span className="text-blue-500">Education</span>{" "}
+              Transform Learning at <span className="text-blue-500">MUJ</span>{" "}
               with Technology & Mindfulness
             </h1>
             <p className="text-lg text-gray-300 max-w-lg">
-              Empower teachers with interactive course design tools and provide
-              students with customizable study environments to enhance focus and
-              engagement.
+              Enable faculty with dynamic course design tools and offer students personalized, distraction-free study environments—fostering deeper focus, engagement, and holistic academic success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link to="/auth">
@@ -175,21 +173,15 @@ function HomePage() {
                   Get Started
                 </button>
               </Link>
-              <a
-                target="_blank"
-                href="https://www.youtube.com/watch?v=jmVAoCwxQFg"
-              >
-                <button className="px-6 py-3 rounded-md bg-transparent border border-gray-700 text-white hover:bg-gray-800 transition-colors sm:w-auto w-full font-medium transform hover:-translate-y-1 duration-200">
-                  Watch Demo
-                </button>
-              </a>
+
+              
             </div>
           </div>
           <div className="relative h-[250px] md:h-[400px] rounded-xl overflow-hidden shadow-2xl shadow-blue-500/20">
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-1"></div>
             <img
               src="/assets/hero.avif"
-              alt="eduWave Platform"
+              alt="eduBuddy Platform"
               className="object-contain md:object-cover w-full h-full"
             />
           </div>
@@ -204,11 +196,10 @@ function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
-              Powerful Features for Teachers & Students
+              Next-Gen Tools for Educators & Learners
             </h2>
             <p className="text-gray-300">
-              eduWave combines cutting-edge technology with mindfulness
-              practices to create an optimal learning environment.
+              eduBuddy blends smart tech and mindfulness to help you learn better, stay focused, and thrive.
             </p>
           </div>
 
@@ -254,11 +245,10 @@ function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
-              How eduWave Works
+              How eduBuddy Works
             </h2>
             <p className="text-gray-300">
-              Our platform seamlessly integrates technology and mindfulness to
-              create an optimal learning environment.
+              Where smart tech meets still minds—eduBuddy transforms the way students learn and stay engaged.
             </p>
           </div>
 
@@ -292,9 +282,9 @@ function HomePage() {
           <span>Made with ❤️ by </span>
           <a
             className="text-blue-500 hover:text-blue-400 underline"
-            href="https://github.com/suraj719"
+            href="https://github.com/Sanskriti0109"
           >
-            suraj
+            Sanskriti
           </a>
         </div>
       </footer>
