@@ -4,7 +4,7 @@ Introducing eduBuddy: an innovative solution at the intersection of technology a
 
 🌐 Explore the Platform:
 - 🔗 Access the app: [https://edubuddy-swam.vercel.app/]
-
+demo for student: sans , ABC123
 
 ## Features for students:
 1. **Student Management:**
